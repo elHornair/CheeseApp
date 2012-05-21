@@ -1,5 +1,8 @@
 YUI({
     modules: {
+        'home-view': {
+            fullpath: "js/view/HomeView.js"
+        },
         'cheese-model': {
             fullpath: "js/model/CheeseModel.js"
         },
@@ -13,7 +16,7 @@ YUI({
             fullpath: "js/view/CheeseListView.js"
         }
     }
-}).use('app-base', 'app-transitions', 'cheese-model', 'cheese-view', 'cheese-list', 'cheese-list-view', function (Y) {
+}).use('app-base', 'app-transitions', 'home-view', 'cheese-model', 'cheese-view', 'cheese-list', 'cheese-list-view', function (Y) {
 
     'use strict';
 
@@ -35,6 +38,9 @@ YUI({
         transitions: true,
         viewContainer: '#content',
         views: {
+            home: {
+                type: 'HomeView'
+            },
             cheeseList: {
                 type: 'CheeseListView'
             },
@@ -44,6 +50,11 @@ YUI({
             }
         },
         routes: [{
+            path: '/',
+            callback: function () {
+                this.showView('home');
+            }
+        }, {
             path: '/cheese',
             callback: function () {
                 this.showView('cheeseList', {
@@ -70,6 +81,6 @@ YUI({
     });
 
     app.render();
-//    app.navigate('/cheese');
+    app.navigate('/');
 
 });

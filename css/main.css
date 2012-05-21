@@ -4,17 +4,17 @@ body {
     overflow-y: scroll;
 }
 
-#content ul {
+#content ul.cheeselist {
     margin: 0;
 }
 
-#content li {
+#content ul.cheeselist li {
     list-style: none;
     border-bottom: 1px solid #EEE;
     padding: 10px 0;
 }
 
-#content li span {
+#content ul.cheeselist li span {
     padding-left: 10px;
     font-size: 1.2em;
 }
@@ -34,4 +34,9 @@ body {
 
 .maxi {
     margin: 4px 0 10px;
+}
+
+.homepic {
+    float: left;
+    margin-right: 26px;
 }

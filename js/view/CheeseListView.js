@@ -4,7 +4,7 @@ YUI.add('cheese-list-view', function (Y) {
 
     Y.CheeseListView = Y.Base.create('cheeseListView', Y.View, [], {
 
-        _template: '<h2>Mmmmmmh, cheese</h2><p>There are <b>{pieces} pieces</b> remaining in total</p><ul>{itemList}</ul>',
+        _template: '<h2>Mmmmmmh, cheese</h2><p>There are <strong>{pieces} pieces</strong> remaining in total</p><ul class="cheeselist">{itemList}</ul>',
         _itemTemplate: '<li><a href="/cheese/{type}" class="thumbnail mini imgwrapper"><img src="/img/{image}" alt="{type} image"></a><span>Delicious <a href="/cheese/{type}">{type}</a> ({pieces} piece(s) remaining)</span></li>',
 
         render: function () {
@@ -27,4 +27,4 @@ YUI.add('cheese-list-view', function (Y) {
 
     });
 
-}, '0.1', {requires: ['model', 'cheese-list']});
+}, '0.1', {requires: ['view', 'cheese-list']});

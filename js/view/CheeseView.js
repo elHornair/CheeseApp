@@ -4,7 +4,7 @@ YUI.add('cheese-view', function (Y) {
 
     Y.CheeseView = Y.Base.create('cheeseView', Y.View, [], {
 
-        _template: '<h2>{type}</h2><img src="/img/{image}" alt="{type} image" class="thumbnail maxi"><p>There are <b>{pieces} piece(s)</b> of delicious {type} remaining.</p><button class="btn btn-large btn-primary eat">Eat a Piece!</button>',
+        _template: '<h2>{type}</h2><img src="/img/{image}" alt="{type} image" class="thumbnail maxi"><p>There are <strong>{pieces} piece(s)</strong> of delicious {type} remaining.</p><button class="btn btn-large btn-primary eat">Eat a Piece!</button>',
 
         events: {
             '.eat': {click: 'eatPiece'}
@@ -31,4 +31,4 @@ YUI.add('cheese-view', function (Y) {
 
     });
 
-}, '0.1', {requires: ['model', 'cheese-model']});
+}, '0.1', {requires: ['view', 'cheese-model']});
