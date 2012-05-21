@@ -5,7 +5,7 @@ YUI.add('cheese-view', function (Y) {
 
     Y.CheeseView = Y.Base.create('cheeseView', Y.View, [], {
 
-        _template: '{pieces} piece(s) of delicious {type} remaining.<button class="eat">Eat a Piece!</button>',
+        _template: '{pieces} piece(s) of delicious {type} remaining.<button class="btn btn-large btn-primary eat">Eat a Piece!</button>',
 
         events: {
             '.eat': {click: 'eatPiece'}

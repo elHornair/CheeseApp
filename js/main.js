@@ -46,7 +46,7 @@ YUI({
                 this.showView('cheeseList', {
                     model: myCheeseList
                 });
-                Y.one('h2').set('text', 'Mmmmmmh, cheese');
+                Y.one('#subheading').set('text', 'Mmmmmmh, cheese');
             }
         }, {
             path: '/cheese/:id',
@@ -57,7 +57,7 @@ YUI({
                     this.showView('cheese', {
                         model: cheeseModel
                     });
-                    Y.one('h2').set('text', cheeseModel.get('type'));
+                    Y.one('#subheading').set('text', cheeseModel.get('type'));
                 } else {
                     this.fire('error', {
                         type : 'cheese not found',
