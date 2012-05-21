@@ -1,4 +1,3 @@
-/*global YUI */
 YUI({
     modules: {
         'cheese-model': {
@@ -50,7 +49,6 @@ YUI({
                 this.showView('cheeseList', {
                     model: myCheeseList
                 });
-                Y.one('#subheading').set('text', 'Mmmmmmh, cheese');
             }
         }, {
             path: '/cheese/:id',
@@ -61,7 +59,6 @@ YUI({
                     this.showView('cheese', {
                         model: cheeseModel
                     });
-                    Y.one('#subheading').set('text', cheeseModel.get('type'));
                 } else {
                     this.fire('error', {
                         type : 'cheese not found',
@@ -73,6 +70,6 @@ YUI({
     });
 
     app.render();
-    //app.navigate('/cheese');
+//    app.navigate('/cheese');
 
 });

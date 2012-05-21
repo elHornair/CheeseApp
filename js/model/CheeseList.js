@@ -1,4 +1,3 @@
-/*global YUI */
 YUI.add('cheese-list', function (Y) {
 
     'use strict';

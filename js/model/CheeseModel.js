@@ -1,4 +1,3 @@
-/*global YUI */
 YUI.add('cheese-model', function (Y) {
 
     'use strict';

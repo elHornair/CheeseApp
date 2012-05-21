@@ -1,12 +1,11 @@
-/*global YUI */
 YUI.add('cheese-list-view', function (Y) {
 
     'use strict';
 
     Y.CheeseListView = Y.Base.create('cheeseListView', Y.View, [], {
 
-        _template: '<p>There are ({pieces} pieces remaining)</p><ul>{itemList}</ul>',
-        _itemTemplate: '<li>Delicious <a href="/cheese/{type}">{type}</a> ({pieces} pieces remaining)</li>',
+        _template: '<h2>Mmmmmmh, cheese</h2><p>There are <b>{pieces} pieces</b> remaining in total</p><ul>{itemList}</ul>',
+        _itemTemplate: '<li><a href="/cheese/{type}" class="thumbnail mini imgwrapper"><img src="/img/{image}" alt="{type} image"></a><span>Delicious <a href="/cheese/{type}">{type}</a> ({pieces} piece(s) remaining)</span></li>',
 
         render: function () {
             var container = this.get('container'),

@@ -1,4 +1,37 @@
 body {
     padding-top: 60px;
     padding-bottom: 40px;
+    overflow-y: scroll;
+}
+
+#content ul {
+    margin: 0;
+}
+
+#content li {
+    list-style: none;
+    border-bottom: 1px solid #EEE;
+    padding: 10px 0;
+}
+
+#content li span {
+    padding-left: 10px;
+    font-size: 1.2em;
+}
+
+#content a.imgwrapper,
+#content a.imgwrapper img {
+    display: inline-block;
+}
+
+.icon-heart {
+    padding-right: 4px;
+}
+
+.mini {
+    width: 100px;
+}
+
+.maxi {
+    margin: 4px 0 10px;
 }
