@@ -69,6 +69,6 @@ YUI({
     });
 
     app.render();
-    app.navigate('/cheese');
+    //app.navigate('/cheese');
 
 });
