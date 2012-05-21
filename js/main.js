@@ -23,8 +23,12 @@ YUI({
 
     myCheeseList = new Y.CheeseList();
     myCheeseList.add([
-        {type: 'Gruyere'},
-        {type: 'Emmentaler'},
+        {type: 'Gruyere', image: 'gruyere.jpg'},
+        {type: 'Emmentaler', image: 'emmentaler.jpg'},
+        {type: 'Appenzeller', image: 'appenzeller.jpg'},
+        {type: 'Raclette', image: 'raclette.jpg'},
+        {type: 'Sbrinz', image: 'sbrinz.jpg'},
+        {type: 'Vacherin', image: 'vacherin.jpg'},
         {type: 'Jesus'}
     ]);
 
