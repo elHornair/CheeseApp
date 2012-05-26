@@ -4,8 +4,6 @@ YUI.add('cheese-view', function (Y) {
 
     Y.CheeseView = Y.Base.create('cheeseView', Y.View, [], {
 
-        _template: '<h2>{type}</h2><img src="/img/{image}" alt="{type} image" class="thumbnail maxi"><p>There are <strong>{pieces} piece(s)</strong> of delicious {type} remaining.</p><button class="btn btn-large btn-primary eat">Eat a Piece!</button>',
-
         events: {
             '.eat': {click: 'eatPiece'}
         },
@@ -15,14 +13,8 @@ YUI.add('cheese-view', function (Y) {
         },
 
         render: function () {
-
-            var container = this.get('container'),
-                html = Y.Lang.sub(this._template, this.get('model').toJSON());
-
-            // TODO: this call somehow throws an error, when the view is not rendered for the first time
-            container.setHTML(html);
-
-            return this;
+            var html = Y.Lang.sub(Y.one('#template_cheese').getContent(), this.get('model').toJSON());
+            this.get('container').setHTML(html);
         },
 
         eatPiece: function (e) {

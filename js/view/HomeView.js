@@ -7,7 +7,6 @@ YUI.add('home-view', function (Y) {
         render: function () {
             var html = Y.one('#template_home').getContent();
             this.get('container').setHTML(html);
-            return this;
         }
 
     });

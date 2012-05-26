@@ -4,25 +4,20 @@ YUI.add('cheese-list-view', function (Y) {
 
     Y.CheeseListView = Y.Base.create('cheeseListView', Y.View, [], {
 
-        _template: '<h2>Mmmmmmh, cheese</h2><p>There are <strong>{pieces} pieces</strong> remaining in total</p><ul class="cheeselist">{itemList}</ul>',
-        _itemTemplate: '<li><a href="/cheese/{type}" class="thumbnail mini imgwrapper"><img src="/img/{image}" alt="{type} image"></a><span>Delicious <a href="/cheese/{type}">{type}</a> ({pieces} piece(s) remaining)</span></li>',
-
         render: function () {
             var container = this.get('container'),
-                html,
-                renderedItems = '';
+                renderedItems = '',
+                templateList = Y.one('#template_list').getContent(),
+                templateListItem = Y.one('#template_list_item').getContent();
 
             this.get('model').each(function (item) {
-                renderedItems += Y.Lang.sub(this._itemTemplate, item.toJSON());
+                renderedItems += Y.Lang.sub(templateListItem, item.toJSON());
             }, this);
 
-            html = Y.Lang.sub(this._template, {
+            container.setHTML(Y.Lang.sub(templateList, {
                 pieces: this.get('model').getTotalPieces(),
                 itemList: renderedItems
-            });
-
-            container.setHTML(html);
-            return this;
+            }));
         }
 
     });
