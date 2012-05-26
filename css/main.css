@@ -1,22 +1,27 @@
+/* General */
 body {
     padding-top: 60px;
     padding-bottom: 40px;
     overflow-y: scroll;
 }
 
-#content ul.cheeselist {
-    margin: 0;
-}
-
-#content ul.cheeselist li {
-    list-style: none;
-    border-bottom: 1px solid #EEE;
-    padding: 10px 0;
-}
-
-#content ul.cheeselist li span {
-    padding-left: 10px;
+p {
     font-size: 1.2em;
+    padding-bottom: 1em;
+}
+
+ul {
+    margin-bottom: 2em;
+}
+
+li {
+    line-height: 1.6em;
+    font-size: 1.2em;
+    vertical-align: middle;
+}
+
+h2 {
+    margin-bottom: .5em;
 }
 
 #content a.imgwrapper,
@@ -36,7 +41,46 @@ body {
     margin: 4px 0 10px;
 }
 
+/* Cheese list */
+#content ul.cheeselist {
+    margin: 0;
+}
+
+#content ul.cheeselist li {
+    list-style: none;
+    border-bottom: 1px solid #EEE;
+    padding: 10px 0;
+}
+
+#content ul.cheeselist li span {
+    padding-left: 10px;
+}
+
+/* Home */
 .homepic {
     float: left;
     margin-right: 26px;
+}
+
+ul.about_me {
+    float: left;
+    margin-left: 0;
+    list-style: none;
+}
+
+ul.about_me li {
+    padding-left: 58px;
+    line-height: 42px;
+    background-repeat: no-repeat;
+
+}
+
+li.liip {
+    background-image: url('/img/liip.png');
+}
+li.twitter {
+    background-image: url('/img/twitter.png');
+}
+li.github {
+    background-image: url('/img/github.png');
 }
