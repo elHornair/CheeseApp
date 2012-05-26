@@ -31,7 +31,7 @@ YUI({
         {type: 'Raclette', image: 'raclette.jpg'},
         {type: 'Sbrinz', image: 'sbrinz.jpg'},
         {type: 'Vacherin', image: 'vacherin.jpg'},
-        {type: 'Jesus'}
+        {type: 'Cheesus', image: 'cheesus.jpg'}
     ]);
 
     app = new Y.App({
