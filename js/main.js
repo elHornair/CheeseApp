@@ -27,11 +27,11 @@ YUI({
     myCheeseList.add([
         {type: 'Gruyere', image: 'gruyere.jpg'},
         {type: 'Emmentaler', image: 'emmentaler.jpg'},
+        {type: 'Cheesus', image: 'cheesus.jpg', pieces: 1},
         {type: 'Appenzeller', image: 'appenzeller.jpg'},
         {type: 'Raclette', image: 'raclette.jpg'},
         {type: 'Sbrinz', image: 'sbrinz.jpg'},
-        {type: 'Vacherin', image: 'vacherin.jpg'},
-        {type: 'Cheesus', image: 'cheesus.jpg'}
+        {type: 'Vacherin', image: 'vacherin.jpg'}
     ]);
 
     app = new Y.App({
@@ -62,25 +62,18 @@ YUI({
                 });
             }
         }, {
-            path: '/cheese/:id',
+            path: '/cheese/:type',
             callback: function (request) {
-                var cheeseModel = myCheeseList.getByType(request.params.id);
-
+                var cheeseModel = myCheeseList.getByType(request.params.type);
                 if (!Y.Lang.isUndefined(cheeseModel)) {
                     this.showView('cheese', {
                         model: cheeseModel
-                    });
-                } else {
-                    this.fire('error', {
-                        type : 'cheese not found',
-                        error: "There was no cheese with type " + request.params.id + " found"
                     });
                 }
             }
         }]
     });
 
-    app.render();
     app.navigate('/');
 
 });

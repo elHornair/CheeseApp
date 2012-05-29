@@ -5,7 +5,9 @@ YUI.add('cheese-view', function (Y) {
     Y.CheeseView = Y.Base.create('cheeseView', Y.View, [], {
 
         events: {
-            '.eat': {click: 'eatPiece'}
+            '.eat': {click: function (e) {
+                this.get('model').eatPiece();
+            }}
         },
 
         initializer: function () {
@@ -13,12 +15,9 @@ YUI.add('cheese-view', function (Y) {
         },
 
         render: function () {
-            var html = Y.Lang.sub(Y.one('#template_cheese').getContent(), this.get('model').toJSON());
+            var template = Y.one('#template_cheese').getContent(),
+                html = Y.Lang.sub(template, this.get('model').toJSON());
             this.get('container').setHTML(html);
-        },
-
-        eatPiece: function (e) {
-            this.get('model').eatPiece(e);
         }
 
     });

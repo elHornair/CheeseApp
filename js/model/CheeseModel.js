@@ -3,18 +3,8 @@ YUI.add('cheese-model', function (Y) {
     'use strict';
 
     Y.CheeseModel = Y.Base.create('cheeseModel', Y.Model, [], {
-
-        allGone: function () {
-            return this.get('pieces') === 0;
-        },
-
         eatPiece: function () {
-            if (this.allGone()) {
-                this.fire('error', {
-                    type : 'eat',
-                    error: "Oh snap! There isn't any cheese left."
-                });
-            } else {
+            if (this.get('pieces') !== 0) {
                 this.set('pieces', this.get('pieces') - 1);
             }
         }
@@ -23,7 +13,8 @@ YUI.add('cheese-model', function (Y) {
             pieces: {
                 value: 3
             },
-            type: {}
+            type: {},
+            image: {}
         }
     });
 

@@ -8,19 +8,16 @@ YUI.add('cheese-list', function (Y) {
 
         getTotalPieces: function () {
             var numSlices = 0;
-
             this.each(function (item) {
                 numSlices += item.get('pieces');
             });
-
             return numSlices;
         },
 
         getByType: function (type) {
-            var filteredList = Y.Array.filter(this.toArray(), function (item) {
+            var filteredList = this.filter(function (item) {
                 return item.get('type') === type;
             });
-
             if (filteredList.length !== 0) {
                 return filteredList[0];
             }
